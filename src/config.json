@@ -1,0 +1,11 @@
+{
+    "recorence": "daily",
+    "turnon": "06:58",
+    "turnoff": "16:58",
+    "delaypower" : "02:00",
+    "appserver": "appserver.ini",
+    "broker": "/home/henriqueluiz/Projects/inspetor-lestrade/totvs/broker/appserver/",
+    "conns": ["172.16.106.31:5004","172.16.106.31:5005","172.16.106.32:5001","172.16.106.32:5002","172.16.106.32:5003"],
+    "alwaysup": ["172.16.106.32:5001","172.16.106.32:5002","172.16.106.32:5003"],
+    "alwaysdown": ["172.16.106.31:5004","172.16.106.31:5005"]
+}
