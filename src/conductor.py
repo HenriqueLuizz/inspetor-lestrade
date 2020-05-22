@@ -105,14 +105,14 @@ class Conductor:
     """Function Broker
     Function responsavel por criar o arquivo de enabe ou disable no diretorio do Broker do Protheus
 
-    O diretório deve ser configurado no arquivo de configuração config.json ou através do proprio CLI
-    que vai gravar o caminho no arquivo config.json
+    O diretório deve ser configurado no arquivo de configuração settings.json ou através do proprio CLI
+    que vai gravar o caminho no arquivo settings.json
     """
     def broker(self, action: str, path: str, conns: list):
 
         print(path + '.TOTVS_BROKER_COMMAND')
 
-        # Limpar lista de conexoes, de acordo com o lista que foi configurada no config.json (alwaysup ou alwaysdown)
+        # Limpar lista de conexoes, de acordo com o lista que foi configurada no settings.json (alwaysup ou alwaysdown)
         with open(path + '/.TOTVS_BROKER_COMMAND', 'w') as broker_file:
             if action == 'enable':
                 """Cria o arquivo enable no diretório do appserver."""

@@ -1,6 +1,7 @@
 {
+    "oci" : ["ocid1.instance.oc1.iad.anuwcljtpjmn5cqc3vjppgw7t5ulzp53cbyju5x54uhelxdkoitxfpoaadiq","ocid1.instance.oc1.iad.anuwcljtpjmn5cqc2jsfyzwju3idvikaqgwg4v4dbegegokf7psukpksr73a","ocid1.instance.oc1.iad.anuwcljtpjmn5cqc4croznuvesn57ura75bsimuywrrcwl6cyjtcp53ihn7a"],
     "recorence": "daily",
-    "turnon": "06:58",
+    "turnon": "00:07",
     "turnoff": "16:58",
     "delaypower" : "02:00",
     "appserver": "appserver.ini",
