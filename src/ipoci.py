@@ -1,10 +1,6 @@
 import json
 import subprocess
-import database
 import common
-
-def identifyCloud():
-    return database.getCloud()
 
 def resultOCI(d):
     if d['status']:
@@ -13,8 +9,7 @@ def resultOCI(d):
         if 'data' in o:
             name = o['data']['display-name']
             lifecycle = o['data']['lifecycle-state']
-
-            print(f'Conexão realizada com sucesso!\n {name} - {lifecycle}')
+            print(f'{name} - {lifecycle}')
             return True
 
     else:
@@ -22,12 +17,11 @@ def resultOCI(d):
         return False
 
 
-def checkOCI():
-    for iid in database.getOci():
+def check_oci(iids:list):
+    for iid in iids:
         command=f'oci compute instance get --instance-id {iid}'
         data = common.run(command)
         if data['status']:
-            print('Conexão realizada com sucesso!\n')
             resultOCI(data)
             return True
         else:
@@ -36,7 +30,8 @@ def checkOCI():
         break
     
 
-def instancieOCI(iids:list, action='get'):
+def instancie_oci(iids:list, action='get'):
+    print(f'OCI operation {action} running... ')
     if action.lower() == 'start':
         
         for iid in iids:
@@ -54,9 +49,4 @@ def instancieOCI(iids:list, action='get'):
             data = common.run(f'oci compute instance get --instance-id {iid}')
             resultOCI(data)
 
-
-def oci(action='get'):
-    print(f'OCI operation {action} running... ')
-    result = database.getOci()   
-    instancieOCI(result,action)
 
